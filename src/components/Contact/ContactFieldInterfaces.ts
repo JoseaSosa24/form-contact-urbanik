@@ -4,4 +4,5 @@ export interface ContactFormValues {
     email: string;
     phone: string;
     message: string;
+    terms: boolean
   }

@@ -18,6 +18,7 @@ export const ContactForm = () => {
           email: "",
           phone: "",
           message: "",
+          terms: false
         }}
         validationSchema={ContactValidation}
         onSubmit={(_values: ContactFormValues, { setSubmitting, resetForm }) => {

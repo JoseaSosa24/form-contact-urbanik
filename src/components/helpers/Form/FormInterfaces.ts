@@ -22,4 +22,10 @@ export interface TextFieldProps {
     buttonText: string;
   }
 
+export interface CheckboxProps {
+  name: string;
+  label: string;
+  link: string
+}
+
   

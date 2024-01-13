@@ -1,7 +1,6 @@
-// ContactFields.tsx
 
 import { Field, ErrorMessage } from "formik";
-import { TextField } from "../../components/helpers/Form/Form";
+import { Checkbox, TextField } from "../../components/helpers/Form/Form";
 
 export const ContactFields = () => (
   <>
@@ -13,5 +12,11 @@ export const ContactFields = () => (
       <Field as="textarea" name="message" placeholder="Mensaje" />
       <ErrorMessage className="mensaje" name="message" component="p" />
     </div>
+    <Checkbox
+      name="terms"
+      label="Acepto los Términos, Condiciones y Políticas de"
+      link="https://urbanik-hub.com/termsandcondition"
+    />
+    <ErrorMessage className="mensaje" name="terms" component="p" />
   </>
 );
