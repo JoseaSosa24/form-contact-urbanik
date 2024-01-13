@@ -1,20 +1,5 @@
 import { ErrorMessage, Field } from 'formik';
-import { FormInputProps, FormTextareaProps, TextFieldProps } from './FormInterfaces';
-
-export const FormInput = ({ label, name, typeField, placeHolder }: FormInputProps) => (
-  <div className="form-group">
-    <label htmlFor={name} className="form-label">
-      {label}
-    </label>
-    <Field
-      className="form-input"
-      id={name}
-      type={typeField}
-      name={name}
-      placeholder={placeHolder}
-    />
-  </div>
-);
+import {FormTextareaProps, TextFieldProps } from './FormInterfaces';
 
 export const FormTextarea = ({ label, name, placeHolder }: FormTextareaProps) => (
   <div className="form-group">

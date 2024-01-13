@@ -1,11 +1,15 @@
-export interface FormInputProps {
-    label: string;
-    name: string;
-    typeField: string;
-    placeHolder: string;
-    required?: boolean;
-  }
-  
+export interface HeaderFormProps {
+  className: string;
+  id: string;
+  title: string;
+  paragraph: string
+}
+
+export interface TextFieldProps {
+  name: string;
+  placeholder: string;
+  typeField: string;
+}
   export interface FormTextareaProps {
     label: string;
     name: string;
@@ -13,9 +17,9 @@ export interface FormInputProps {
     placeHolder: string;
   }
   
-  export interface TextFieldProps {
-    name: string;
-    placeholder: string;
-    typeField: string;
+  export interface SubmitButtonProps {
+    isSubmitting: boolean;
+    buttonText: string;
   }
+
   
