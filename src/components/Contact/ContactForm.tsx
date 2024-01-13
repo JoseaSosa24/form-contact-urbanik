@@ -5,6 +5,8 @@ import { ContactFields } from "./ContactFields";
 import { ContactFormValues } from "./ContactFieldInterfaces";
 import { ContactValidation } from "./ContactValidation";
 import { SubmitButton } from "../helpers/Form/SubmitButton";
+import { sendEmail } from "../../utils/EmailService";
+
 
 
 export const ContactForm = () => {
@@ -21,14 +23,33 @@ export const ContactForm = () => {
           terms: false
         }}
         validationSchema={ContactValidation}
-        onSubmit={(_values: ContactFormValues, { setSubmitting, resetForm }) => {
-          setConfirmMessage(true);
-          resetForm();
-          setTimeout(() => {
-            setConfirmMessage(false);
-            setSubmitting(false);
-          }, 5000);
+        onSubmit={async (values: ContactFormValues, { setSubmitting, resetForm }) => {
+          try {
+          
+            await sendEmail({
+             
+              from: 'Acme <onboarding@resend.dev>',
+              to: [values.email, 'josea_1998@hotmail.com'], 
+              subject: 'Correo de prueba de llegada',
+              html: `<p>Nombre: ${values.fullName}</p>
+                     <p>Email: ${values.email}</p>
+                     <p>Teléfono: ${values.phone}</p>
+                     <p>Mensaje: ${values.message}</p>`,
+            });
+        
+            // Continúa con tu lógica de éxito
+            setConfirmMessage(true);
+            resetForm();
+            setTimeout(() => {
+              setConfirmMessage(false);
+              setSubmitting(false);
+            }, 5000);
+          } catch (error) {
+            console.error('Error al enviar el correo', error);
+            
+          }
         }}
+        
       >
         {(formikProps) => (
           <Form className="form">

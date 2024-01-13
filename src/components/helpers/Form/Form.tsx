@@ -1,7 +1,16 @@
-import { ErrorMessage, Field } from 'formik';
-import  {CheckboxProps, FormTextareaProps, TextFieldProps } from './FormInterfaces';
+import { ErrorMessage, Field } from "formik";
+import {
+  CheckboxProps,
+  FormTextareaProps,
+  TextFieldProps,
+} from "./FormInterfaces";
+import "./Form.scss";
 
-export const FormTextarea = ({ label, name, placeHolder }: FormTextareaProps) => (
+export const FormTextarea = ({
+  label,
+  name,
+  placeHolder,
+}: FormTextareaProps) => (
   <div className="form-group">
     <label htmlFor={name} className="form-label">
       {label}
@@ -25,14 +34,16 @@ export const TextField = ({ name, placeholder, typeField }: TextFieldProps) => (
 
 export const Checkbox = ({ name, label, link }: CheckboxProps) => (
   <div className="form-group">
-    <Field type="checkbox" name={name} id={name} />
-    <label htmlFor={name}>
-      {label}{' '}
-      {link && (
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          Urbanik-Hub
-        </a>
-      )}
-    </label>
+    <div className="form-checkbox">
+      <Field type="checkbox" name={name} id={name} className='checkbox'/>
+      <label htmlFor={name}>
+        {label}{" "}
+        {link && (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            Urbanik-Hub
+          </a>
+        )}
+      </label>
+    </div>
   </div>
 );
