@@ -36,7 +36,7 @@ export const Checkbox = ({ name, label, link }: CheckboxProps) => (
   <div className="form-group">
     <div className="form-checkbox">
       <Field type="checkbox" name={name} id={name} className='checkbox'/>
-      <label htmlFor={name}>
+      <label htmlFor={name} className={name}>
         {label}{" "}
         {link && (
           <a href={link} target="_blank" rel="noopener noreferrer">

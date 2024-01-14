@@ -8,7 +8,7 @@ export const Contact = () => {
     <HeaderForm
         className="contacto"
         id="contacto"
-        title="Contacto"
+        title="Contáctanos"
         paragraph="Si estás interesado en conocer más sobre nuestros productos o servicios, no dudes en contactarnos."
       />
       <ContactForm />
